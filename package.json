@@ -1,10 +1,11 @@
 {
-  "name": "gitlab-treact-ui",
+  "name": "webhooks-blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,14 @@
   "license": "MIT",
   "dependencies": {
     "crypto": "^1.0.1",
+    "dotenv": "^8.1.0",
     "http": "0.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "nodemon": "^1.19.1"
   }
 }

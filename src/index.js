@@ -1,27 +1,34 @@
-var secret = `Cp"1n00}IU')3"aCEP0`;
-var repo = '/home/rwieruch/blog_robinwieruch_new';
+import 'dotenv/config';
+import http from 'http';
+import crypto from 'crypto';
+import { exec } from 'child_process';
 
-let http = require('http');
-let crypto = require('crypto');
-
-const exec = require('child_process').exec;
+const REPOSITORIES_TO_DIR = {
+  'rwieruch/blog_robinwieruch_content': '/home/rwieruch/blog_robinwieruch',
+  'rwieruch/blog_iamliesa_content': '/home/rwieruch/blog_iamliesa',
+};
 
 http
   .createServer((req, res) => {
     req.on('data', chunk => {
-      const sig = `sha1=${crypto
-        .createHmac('sha1', secret)
-        .update(chunk.toString())
+      const signature = `sha1=${crypto
+        .createHmac('sha1', process.env.SECRET)
+        .update(chunk)
         .digest('hex')}`;
 
-      console.log(req);
+      const isAllowed = req.headers['x-hub-signature'] === signature;
 
-      if (req.headers['x-hub-signature'] === sig) {
-        // exec(
-        //   'cd ' +
-        //     repo +
-        //     ' && git pull --rebase origin master && npm run build'
-        // );
+      const body = JSON.parse(chunk);
+
+      const isMaster = body?.ref === 'refs/heads/master';
+      const directory = REPOSITORIES_TO_DIR[(body?.repository?.full_name)];
+
+      if (isAllowed && isMaster && directory) {
+        try {
+          exec(`cd ${directory} && bash webhook.sh`);
+        } catch (error) {
+          console.log(error);
+        }
       }
     });
 
