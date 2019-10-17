@@ -5,10 +5,11 @@ import { exec } from 'child_process';
 
 const USER_PATH = '/home/rwieruch';
 
-const REPOSITORIES_TO_DIR = {
+const GITHUB_TO_DIR = {
   'rwieruch/blog_iamliesa_content': `${USER_PATH}/blog_iamliesa`,
   'rwieruch/blog_robinwieruch_content': `${USER_PATH}/blog_robinwieruch`,
   'rwieruch/github-webhook-automatic-blog-deployment': `${USER_PATH}/Webhooks/webhooks-blog`,
+  'rwieruch/api.purchasing-power-parity.com': `${USER_PATH}/Microservices/api.purchasing-power-parity.com`,
 };
 
 http
@@ -24,7 +25,7 @@ http
       const body = JSON.parse(chunk);
 
       const isMaster = body?.ref === 'refs/heads/master';
-      const directory = REPOSITORIES_TO_DIR[(body?.repository?.full_name)];
+      const directory = GITHUB_TO_DIR[(body?.repository?.full_name)];
 
       if (isAllowed && isMaster && directory) {
         try {
