@@ -10,6 +10,7 @@ const GITHUB_TO_DIR = {
   'rwieruch/blog_robinwieruch_content': `${USER_PATH}/blog_robinwieruch`,
   'rwieruch/github-webhook-automatic-blog-deployment': `${USER_PATH}/Webhooks/webhooks-blog`,
   'rwieruch/api.purchasing-power-parity.com': `${USER_PATH}/Microservices/api.purchasing-power-parity.com`,
+  'rwieruch/purchasing-power-parity.com': `${USER_PATH}/Websites/purchasing-power-parity.com`,
 };
 
 http
