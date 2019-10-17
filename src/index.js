@@ -3,9 +3,12 @@ import http from 'http';
 import crypto from 'crypto';
 import { exec } from 'child_process';
 
+const USER_PATH = '/home/rwieruch';
+
 const REPOSITORIES_TO_DIR = {
-  'rwieruch/blog_robinwieruch_content': '/home/rwieruch/blog_robinwieruch',
-  'rwieruch/blog_iamliesa_content': '/home/rwieruch/blog_iamliesa',
+  'rwieruch/blog_iamliesa_content': `${USER_PATH}/blog_iamliesa`,
+  'rwieruch/blog_robinwieruch_content': `${USER_PATH}/blog_robinwieruch`,
+  'rwieruch/github-webhook-automatic-blog-deployment': `${USER_PATH}/Webhooks/webhooks-blog`,
 };
 
 http
