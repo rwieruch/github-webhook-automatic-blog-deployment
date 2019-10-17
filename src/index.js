@@ -11,6 +11,7 @@ const GITHUB_TO_DIR = {
   'rwieruch/github-webhook-automatic-blog-deployment': `${USER_PATH}/Webhooks/webhooks-blog`,
   'rwieruch/api.purchasing-power-parity.com': `${USER_PATH}/Microservices/api.purchasing-power-parity.com`,
   'rwieruch/purchasing-power-parity.com': `${USER_PATH}/Websites/purchasing-power-parity.com`,
+  'rwieruch/reisebuero-bergfelde.de': `${USER_PATH}/Websites/bergfelde-reisen`,
 };
 
 http
