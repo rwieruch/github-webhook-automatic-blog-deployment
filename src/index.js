@@ -6,6 +6,10 @@ import { exec } from 'child_process';
 const USER_PATH = '/home/rwieruch';
 
 const GITHUB_TO_DIR = {
+  'rwieruch/gatsby-personal-brand': [
+    `${USER_PATH}/Websites/blog_iamliesa`,
+    `${USER_PATH}/Websites/blog_robinwieruch`,
+  ],
   'rwieruch/blog_iamliesa_content': [
     `${USER_PATH}/Websites/blog_iamliesa/content`,
   ],
