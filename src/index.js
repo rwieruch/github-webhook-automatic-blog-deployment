@@ -9,10 +9,22 @@ const GITHUB_TO_DIR = {
   'rwieruch/gatsby-personal-brand': [
     `${USER_PATH}/Websites/blog_iamliesa`,
     `${USER_PATH}/Websites/blog_robinwieruch`,
+    `${USER_PATH}/Websites/roadtoreact.com`,
     `${USER_PATH}/Websites/roadtographql.com`,
+    `${USER_PATH}/Websites/roadtofirebase.com`,
+    `${USER_PATH}/Websites/roadtoredux.com`,
+  ],
+  'rwieruch/roadtoreact.com': [
+    `${USER_PATH}/Websites/roadtoreact.com/content`,
   ],
   'rwieruch/roadtographql.com': [
     `${USER_PATH}/Websites/roadtographql.com/content`,
+  ],
+  'rwieruch/roadtofirebase.com': [
+    `${USER_PATH}/Websites/roadtofirebase.com/content`,
+  ],
+  'rwieruch/roadtoredux.com': [
+    `${USER_PATH}/Websites/roadtoredux.com/content`,
   ],
   'rwieruch/blog_iamliesa_content': [
     `${USER_PATH}/Websites/blog_iamliesa/content`,
