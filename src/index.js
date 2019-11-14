@@ -9,6 +9,10 @@ const GITHUB_TO_DIR = {
   'rwieruch/gatsby-personal-brand': [
     `${USER_PATH}/Websites/blog_iamliesa`,
     `${USER_PATH}/Websites/blog_robinwieruch`,
+    `${USER_PATH}/Websites/roadtographql.com`,
+  ],
+  'rwieruch/roadtographql.com': [
+    `${USER_PATH}/Websites/roadtographql.com/content`,
   ],
   'rwieruch/blog_iamliesa_content': [
     `${USER_PATH}/Websites/blog_iamliesa/content`,
@@ -43,7 +47,7 @@ http
       const body = JSON.parse(chunk);
 
       const isMaster = body?.ref === 'refs/heads/master';
-      const directory = GITHUB_TO_DIR[(body?.repository?.full_name)];
+      const directory = GITHUB_TO_DIR[body?.repository?.full_name];
 
       if (isAllowed && isMaster && directory && directory.length) {
         try {
