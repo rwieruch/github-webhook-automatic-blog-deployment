@@ -6,7 +6,10 @@ import { exec } from 'child_process';
 const USER_PATH = '/home/rwieruch';
 
 const GITHUB_TO_DIR = {
-  'rwieruch/course-platform': [
+  'rwieruch/nextjs-firebase-authentication': [
+    `${USER_PATH}/Websites/courses.robinwieruch.de`,
+  ],
+  'rwieruch/content-courses.robinwieruch.de': [
     `${USER_PATH}/Websites/courses.robinwieruch.de`,
   ],
   'rwieruch/gatsby-personal-brand': [
