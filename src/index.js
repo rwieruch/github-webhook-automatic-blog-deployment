@@ -20,18 +20,14 @@ const GITHUB_TO_DIR = {
     `${USER_PATH}/Websites/roadtofirebase.com`,
     `${USER_PATH}/Websites/roadtoredux.com`,
   ],
-  'rwieruch/roadtoreact.com': [
-    `${USER_PATH}/Websites/roadtoreact.com/content`,
-  ],
+  'rwieruch/roadtoreact.com': [`${USER_PATH}/Websites/roadtoreact.com/content`],
   'rwieruch/roadtographql.com': [
     `${USER_PATH}/Websites/roadtographql.com/content`,
   ],
   'rwieruch/roadtofirebase.com': [
     `${USER_PATH}/Websites/roadtofirebase.com/content`,
   ],
-  'rwieruch/roadtoredux.com': [
-    `${USER_PATH}/Websites/roadtoredux.com/content`,
-  ],
+  'rwieruch/roadtoredux.com': [`${USER_PATH}/Websites/roadtoredux.com/content`],
   'rwieruch/blog_iamliesa_content': [
     `${USER_PATH}/Websites/blog_iamliesa/content`,
   ],
@@ -47,14 +43,11 @@ const GITHUB_TO_DIR = {
   'rwieruch/purchasing-power-parity.com': [
     `${USER_PATH}/Websites/purchasing-power-parity.com`,
   ],
-  'rwieruch/reisebuero-bergfelde.de': [
-    `${USER_PATH}/Websites/bergfelde-reisen`,
-  ],
 };
 
 http
   .createServer((req, res) => {
-    req.on('data', chunk => {
+    req.on('data', (chunk) => {
       const signature = `sha1=${crypto
         .createHmac('sha1', process.env.SECRET)
         .update(chunk)
@@ -69,7 +62,7 @@ http
 
       if (isAllowed && isMaster && directory && directory.length) {
         try {
-          directory.forEach(entry => exec(`cd ${entry} && bash webhook.sh`));
+          directory.forEach((entry) => exec(`cd ${entry} && bash webhook.sh`));
           console.log(directory);
         } catch (error) {
           console.log(error);
