@@ -43,6 +43,9 @@ const GITHUB_TO_DIR = {
   'rwieruch/purchasing-power-parity.com': [
     `${USER_PATH}/Websites/purchasing-power-parity.com`,
   ],
+  'table-library/react-table-library': [
+    `${USER_PATH}/Websites/react-table-library`,
+  ],
 };
 
 http
