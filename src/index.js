@@ -65,7 +65,9 @@ http
 
       if (isAllowed && isMaster && directory && directory.length) {
         try {
-          directory.forEach((entry) => exec(`cd ${entry} && bash webhook.sh`));
+          directory.forEach((entry) =>
+            exec(`cd ${entry} && bash webhook.sh &`)
+          );
           console.log(directory);
         } catch (error) {
           console.log(error);
